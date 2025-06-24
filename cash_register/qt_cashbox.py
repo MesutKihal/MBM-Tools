@@ -552,6 +552,77 @@ class App(QMainWindow):
         
         self.__suppliers_div = QFrame()
         self.__suppliers_layout = QGridLayout(self.__suppliers_div)
+        
+        # Search Bar (SUP)
+        self.__sup_search_bar = QLineEdit()
+        self.__sup_search_bar.setPlaceholderText("Type the title of the supplier you want to select")
+        self.__suppliers_layout.addWidget(self.__sup_search_bar, 0, 0, 1, 5)
+        
+        # Search Button (SUP)
+        self.__sup_search_btn = QPushButton("Search")
+        self.__sup_search_btn.setIcon(QIcon("assets\\img\\search.png"))
+        self.__sup_search_btn.setIconSize(QSize(30, 30))
+        self.__suppliers_layout.addWidget(self.__sup_search_btn, 0, 5)
+        
+        # Suppliers Table (SUP)
+        self.__suppliers_table = QTableWidget()
+        self.__suppliers_table.setColumnCount(5)
+        self.__suppliers_table.setRowCount(7)
+        self.__suppliers_table.setHorizontalHeaderLabels(["ID", "Name", "Address", "Phone", "Turnover"])
+        self.__suppliers_table.setAlternatingRowColors(True)
+        self.__suppliers_table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.__suppliers_layout.addWidget(self.__suppliers_table, 1, 0, 2, 6)
+        
+        # Add Supplier Button (SUP)
+        self.__sup_add_btn = QPushButton("Add")
+        self.__sup_add_btn.setIcon(QIcon("assets\\img\\add.png"))
+        self.__sup_add_btn.setIconSize(QSize(30, 30))
+        self.__suppliers_layout.addWidget(self.__sup_add_btn, 3, 0)
+        
+        # Edit Supplier Button (SUP)
+        self.__sup_edit_btn = QPushButton("Edit")
+        self.__sup_edit_btn.setIcon(QIcon("assets\\img\\edit.png"))
+        self.__sup_edit_btn.setIconSize(QSize(30, 30))
+        self.__suppliers_layout.addWidget(self.__sup_edit_btn, 3, 1)
+        
+        # Delete Supplier Button (SUP)
+        self.__sup_delete_btn = QPushButton("Delete")
+        self.__sup_delete_btn.setIcon(QIcon("assets\\img\\bin.png"))
+        self.__sup_delete_btn.setIconSize(QSize(30, 30))
+        self.__suppliers_layout.addWidget(self.__sup_delete_btn, 3, 2)
+        
+        # Print Supplier Button (SUP)
+        self.__sup_print_btn = QPushButton("Print")
+        self.__sup_print_btn.setIcon(QIcon("assets\\img\\printing.png"))
+        self.__sup_print_btn.setIconSize(QSize(30, 30))
+        self.__suppliers_layout.addWidget(self.__sup_print_btn, 3, 3)
+        
+        # Search Bar (SUP)
+        self.__sup_prod_search_bar = QLineEdit()
+        self.__sup_prod_search_bar.setPlaceholderText("Type the title of the supplier you want to select")
+        self.__suppliers_layout.addWidget(self.__sup_prod_search_bar, 4, 0, 1, 2)
+        
+        # Search Button (SUP)
+        self.__sup_prod_search_btn = QPushButton("Search")
+        self.__sup_prod_search_btn.setIcon(QIcon("assets\\img\\search.png"))
+        self.__sup_prod_search_btn.setIconSize(QSize(30, 30))
+        self.__suppliers_layout.addWidget(self.__sup_prod_search_btn, 4, 2)
+        
+        # Suppliers Products Table (SUP)
+        self.__suppliers_products_table = QTableWidget()
+        self.__suppliers_products_table.setColumnCount(5)
+        self.__suppliers_products_table.setRowCount(7)
+        self.__suppliers_products_table.setHorizontalHeaderLabels(["ID", "Title", "Category",  "N° Unit", "Price"])
+        self.__suppliers_products_table.setAlternatingRowColors(True)
+        self.__suppliers_products_table.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.__suppliers_layout.addWidget(self.__suppliers_products_table, 5, 0, 2, 3)
+        
+        # Bill List (SUP)
+        self.__sup_bill_list = QListWidget()
+        self.__sup_bill_list.setStyleSheet("font-size: 18px;padding: 5px;border: 1px solid #ddd;")
+        self.__sup_bill_list.addItem(QListWidgetItem("PRICE \t| PRODUCT TITLE"))
+        self.__suppliers_layout.addWidget(self.__sup_bill_list, 5, 3, 2, 3)
+        
 ######################################################################################################################
 ########################################### Customers Page ###########################################################
         
